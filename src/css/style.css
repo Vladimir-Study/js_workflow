@@ -1,3 +1,53 @@
 body {
     color: #999;
 }
+
+.table {
+    display: flex;
+    background-color: #eee;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.table_section {
+    display: flex;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border: black 1px solid;
+}
+
+.sorted_one {
+    color: black;
+}
+
+.arrow_down {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow_down::after {
+    content: '';
+    background-image: url('../img/arrowdown_icon-icons.com_61188.svg');
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+}
+
+.arrow_top {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow_top::after {
+    content: '';
+    background-image: url('../img/arrowup_icon-icons.com_61191.svg');
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+}
