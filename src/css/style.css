@@ -1,5 +1,6 @@
 body {
-    color: #999;
+    color: black;
+    cursor: url('../img/free-icon-hammer-2505264.png'), auto;
 }
 
 .table {
@@ -50,4 +51,30 @@ body {
     width: 10px;
     height: 10px;
     background-size: cover;
+}
+
+.counter {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.show_screen {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+}
+
+.show_text {
+    font-size: 40px;
+    color: red;
+}
+
+.hide {
+    display: none;
 }
