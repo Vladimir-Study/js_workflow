@@ -1,7 +1,7 @@
-// import { DataOne } from "./sorted_data_one.js";
-// import { Gnom } from "./gnoms/gnoms.js";
-// import { Counter } from "./gnoms/counter.js";
-// import { Game } from "./gnoms/game.js";
+import { DataOne } from "./sorted_data_one.js";
+import { Gnom } from "./gnoms/gnoms.js";
+import { Counter } from "./gnoms/counter.js";
+import { Game } from "./gnoms/game.js";
 // import '../css/style.css'
 
 // TODO: write code here
