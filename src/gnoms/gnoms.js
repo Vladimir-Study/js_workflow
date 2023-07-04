@@ -6,8 +6,10 @@ class Gnom {
   addGnom(sectionNumber) {
     const section = this.element.querySelectorAll(".table_section");
     const addElem = document.createElement("img");
-    addElem.setAttribute("src", "./img/goblin.png");
-    addElem.setAttribute("class", "image");
+    addElem.src = "2dbd01ce16c0fa83cb67.png";
+    addElem.classList.add("image");
+    // addElem.setAttribute("src", "img/goblin.png");
+    // addElem.setAttribute("class", "image");
     section[sectionNumber].append(addElem);
     return sectionNumber;
   }
