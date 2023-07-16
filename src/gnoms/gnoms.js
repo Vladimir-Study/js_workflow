@@ -1,3 +1,5 @@
+import Picture from '../img/goblin.png'
+
 export default class Gnom {
   constructor(element) {
     this.element = element;
@@ -6,7 +8,7 @@ export default class Gnom {
   addGnom(sectionNumber) {
     const section = this.element.querySelectorAll(".table_section");
     const addElem = document.createElement("img");
-    addElem.src = "2dbd01ce16c0fa83cb67.png";
+    addElem.src = Picture;
     addElem.classList.add("image");
     // addElem.setAttribute("src", "img/goblin.png");
     // addElem.setAttribute("class", "image");
