@@ -1,4 +1,4 @@
-class DataOne {
+export default class DataOne {
   creteHeader() {
     const tableDiv = document.querySelector(".sorted_one");
     const trHeader = document.createElement("tr");

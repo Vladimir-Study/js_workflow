@@ -1,7 +1,8 @@
-import { DataOne } from "./sorted_data_one.js";
-import { Gnom } from "./gnoms/gnoms.js";
-import { Counter } from "./gnoms/counter.js";
-import { Game } from "./gnoms/game.js";
+import DataOne from "./sorted_data_one";
+import Gnom from "../gnoms/gnoms";
+import Counter from "../gnoms/counter";
+import Game from "../gnoms/game";
+// import ValidateCard from "../validate_card/validate";
 // import '../css/style.css'
 
 // TODO: write code here
@@ -43,10 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataOne = new DataOne();
   const counter = new Counter(document.querySelector(".count"));
   const game = new Game();
-  window.gnom = gnom;
-  window.dataOne = dataOne;
-  window.counter = counter;
-  window.game = game;
+  // const validateCard = new ValidateCard(document.querySelector('.validator'));
+  console.log('afs')
+  console.log(Game)
+  console.log(DataOne)
+  console.log(Counter)
+  // console.log(ValidateCard)
+  console.log(Gnom)
+  // window.gnom = gnom;
+  // window.dataOne = dataOne;
+  // window.counter = counter;
+  // window.game = game;
+  // window.validateCard = validateCard;
+
+  // validateCard.bindToDOM();
+
 
   let lastIndex = 0;
 

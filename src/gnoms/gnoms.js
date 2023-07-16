@@ -1,4 +1,4 @@
-class Gnom {
+export default class Gnom {
   constructor(element) {
     this.element = element;
   }

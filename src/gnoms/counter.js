@@ -1,4 +1,4 @@
-class Counter {
+export default class Counter {
   constructor(element) {
     this.element = element;
     this.count = 0;
