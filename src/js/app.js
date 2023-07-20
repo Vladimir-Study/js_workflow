@@ -2,8 +2,9 @@ import DataOne from "./sorted_data_one";
 import Gnom from "../gnoms/gnoms";
 import Counter from "../gnoms/counter";
 import Game from "../gnoms/game";
-// import ValidateCard from "../validate_card/validate";
-// import '../css/style.css'
+import CreateElem from "../validate_card/create_elem";
+import ValidateNumber from "../validate_card/validate_number";
+import { doc } from "prettier";
 
 // TODO: write code here
 document.addEventListener("DOMContentLoaded", () => {
@@ -40,64 +41,53 @@ document.addEventListener("DOMContentLoaded", () => {
   //   },
   // ];
 
-  const gnom = new Gnom(document.querySelector(".table"));
+  const table = document.querySelector(".table");
+  const gnom = new Gnom(table);
   const dataOne = new DataOne();
   const counter = new Counter(document.querySelector(".count"));
   const game = new Game();
-  // const validateCard = new ValidateCard(document.querySelector('.validator'));
-  console.log('afs')
-  console.log(Game)
-  console.log(DataOne)
-  console.log(Counter)
-  // console.log(ValidateCard)
-  console.log(Gnom)
-  // window.gnom = gnom;
-  // window.dataOne = dataOne;
-  // window.counter = counter;
-  // window.game = game;
-  // window.validateCard = validateCard;
+  const validator = document.querySelector('.validator');
+  const createElem = new CreateElem(validator);
+  const validatorNumber = new ValidateNumber(document.querySelector('.validator'))
 
-  // validateCard.bindToDOM();
+  window.gnom = gnom;
+  window.dataOne = dataOne;
+  window.counter = counter;
+  window.game = game;
 
+  createElem.bindToDOM();
+  const btnValidate = document.querySelector('.btnValidate')
+  btnValidate.addEventListener('click', e => {
+    validator.classList.toggle('hideValidate')
+  })
+  const blockGame = document.querySelector('.game')
+  const btnGame = document.querySelector('.btnGame')
+  btnGame.addEventListener('click', e => {
+    blockGame.classList.toggle('hideValidate')
+  })
+  
+  const input = document.querySelector('.form-control')
+  input.addEventListener('keyup', (e) => {
+    let validateResult = validatorNumber.validateNumber(input.value);
+    const cards = document.querySelectorAll('.card');
+    if (validateResult !== undefined) {
+      cards.forEach((item) => {
+        if (Array.from(item.classList).includes(validateResult) === false) {
+          item.classList.add('hideCard')
+        }
+      })
+    } else {
+      cards.forEach((item) => {
+        item.classList.remove('hideCard')
+      })
+    }
+  })
 
   let lastIndex = 0;
 
   const gnomsInterval = setInterval(() => {
     lastIndex = gnom.toggleGnom(4, lastIndex);
-    //   // function getRundomInt(max) {
-    //   //   return Math.floor(Math.random() * (max - 1));
-    //   // }
-    //   // let sectionNumber = getRundomInt(4);
-    //   // if (lastIndex !== sectionNumber) {
-    //   //   gnom.addGnom(sectionNumber);
-    //   //   gnom.removeGnom(lastIndex);
-    //   //   lastIndex = sectionNumber;
-    //   // }
   }, 1000);
-
-  // const dataFields = ["id", "title", "year", "imdb"];
-  // dataOne.creteHeader();
-  // let fieldCounter = 0;
-  // let sortSide = true;
-  // const tableInterval = setInterval(() => {
-  //   dataOne.clearTable();
-  //   if (sortSide) {
-  //     const sortDown = dataOne.sortedData(dataSet, dataFields[fieldCounter]);
-  //     dataOne.insertTable(sortDown);
-  //     sortSide = false;
-  //   } else {
-  //     const sortTop = dataOne.sortedDataReverse(
-  //       dataSet,
-  //       dataFields[fieldCounter]
-  //     );
-  //     dataOne.insertTable(sortTop);
-  //     sortSide = true;
-  //     fieldCounter++;
-  //     if (fieldCounter === dataFields.length) {
-  //       fieldCounter = 0;
-  //     }
-  //   }
-  // }, 1000);
 
   const gnomActive = document.querySelector(".table");
   let loseCounter = 0;
@@ -119,9 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// comment this to pass build
-// const unusedVariable = "variable";
 
 // for demonstration purpose only
 export default function demo(value) {
