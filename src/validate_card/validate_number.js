@@ -36,7 +36,7 @@ export default class ValidateNumber {
       "startRange": [[2200, 2204]],
       "length": [16, 17, 18, 19]
     }
-  }
+  };
 
   isValid(cardNumber) {
     let checksum = 0;
