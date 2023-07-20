@@ -1,5 +1,5 @@
 import "./css/style.css";
-import "./validate_card/validate.css"
+import "./validate_card/validate.css";
 
 import "./js/app";
 

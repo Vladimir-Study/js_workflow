@@ -1,4 +1,4 @@
-import Picture from '../img/goblin.png'
+import Picture from "../img/goblin.png";
 
 export default class Gnom {
   constructor(element) {

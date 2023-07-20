@@ -1,5 +1,4 @@
 export default class CreateElem {
-
   constructor(parentElement) {
     this.parentElement = parentElement;
   }
@@ -22,11 +21,10 @@ export default class CreateElem {
           <a id="submitform" class="btn btn-success">Click to Validate</a>
         </div>
       </form>
-    `
+    `;
   }
 
   bindToDOM() {
-    this.parentElement.innerHTML = CreateElem.markup;  
+    this.parentElement.innerHTML = CreateElem.markup;
   }
-
 }

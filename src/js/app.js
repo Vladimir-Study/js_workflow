@@ -46,9 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const dataOne = new DataOne();
   const counter = new Counter(document.querySelector(".count"));
   const game = new Game();
-  const validator = document.querySelector('.validator');
+  const validator = document.querySelector(".validator");
   const createElem = new CreateElem(validator);
-  const validatorNumber = new ValidateNumber(document.querySelector('.validator'))
+  const validatorNumber = new ValidateNumber(
+    document.querySelector(".validator")
+  );
 
   window.gnom = gnom;
   window.dataOne = dataOne;
@@ -56,32 +58,32 @@ document.addEventListener("DOMContentLoaded", () => {
   window.game = game;
 
   createElem.bindToDOM();
-  const btnValidate = document.querySelector('.btnValidate')
-  btnValidate.addEventListener('click', e => {
-    validator.classList.toggle('hideValidate')
-  })
-  const blockGame = document.querySelector('.game')
-  const btnGame = document.querySelector('.btnGame')
-  btnGame.addEventListener('click', e => {
-    blockGame.classList.toggle('hideValidate')
-  })
-  
-  const input = document.querySelector('.form-control')
-  input.addEventListener('keyup', (e) => {
+  const btnValidate = document.querySelector(".btnValidate");
+  btnValidate.addEventListener("click", (e) => {
+    validator.classList.toggle("hideValidate");
+  });
+  const blockGame = document.querySelector(".game");
+  const btnGame = document.querySelector(".btnGame");
+  btnGame.addEventListener("click", (e) => {
+    blockGame.classList.toggle("hideValidate");
+  });
+
+  const input = document.querySelector(".form-control");
+  input.addEventListener("keyup", (e) => {
     let validateResult = validatorNumber.validateNumber(input.value);
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll(".card");
     if (validateResult !== undefined) {
       cards.forEach((item) => {
         if (Array.from(item.classList).includes(validateResult) === false) {
-          item.classList.add('hideCard')
+          item.classList.add("hideCard");
         }
-      })
+      });
     } else {
       cards.forEach((item) => {
-        item.classList.remove('hideCard')
-      })
+        item.classList.remove("hideCard");
+      });
     }
-  })
+  });
 
   let lastIndex = 0;
 
